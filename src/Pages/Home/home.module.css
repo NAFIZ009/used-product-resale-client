@@ -4,3 +4,24 @@
     border-left:10px solid #808080;
     border-bottom:25px solid #808080;
 }
+.tvLogo{
+    /* bottom:0 ; */
+    /* position: absolute; */
+    top: 50%;
+    left: 50%;
+    transform:translateY(830%)  translateX(-50%);
+    /* margin:auto 0; */
+}
+.tvStandLogo{
+    /* bottom:0 ; */
+    /* position: absolute; */
+    top: 50%;
+    left: 50%;
+    transform:translateY(370%)  translateX(-50%);
+    /* margin:auto 0; */
+}
+.overlay{
+    top: 0;
+    left: 0;
+    
+}
