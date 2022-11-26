@@ -1,3 +1,6 @@
-.banner-sec{
-    
+.bannerSec{
+    border-top:10px solid #808080;
+    border-right:10px solid #808080;
+    border-left:10px solid #808080;
+    border-bottom:25px solid #808080;
 }
