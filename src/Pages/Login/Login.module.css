@@ -1,0 +1,28 @@
+.bgCustom{
+    background-color:hsla(258,78%,71%,1);
+background-image:
+radial-gradient(at 27% 30%, hsla(277,99%,49%,1) 0px, transparent 50%),
+radial-gradient(at 68% 67%, hsla(287,83%,51%,1) 0px, transparent 50%);
+}
+input{
+    border:none;
+    outline: none;
+    background-color: transparent;
+    border-bottom: 2px solid white;
+}
+label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all .2s ease;
+}
+input:focus + label{
+    top: -100%;
+    color: white;
+    transform: scale(1.2);
+}
+.onValue{
+    top: -100%;
+    color: white;
+    transform: scale(1.2);
+}
