@@ -10,7 +10,7 @@ const Slider = () => {
         <div>
         <Carousel autoPlay  infiniteLoop showThumbs={false}>
         <div className='relative'>
-            <img src={img1} className={'h-[395px] object-cover object-top' }/>
+            <img src={img1} className={'h-[395px] object-cover object-top' } alt=""/>
             <div className={`absolute w-full h-full ${styles.overlay} flex items-center `}>
             <div className="card w-96 glass ml-16">
   <div className="card-body">
@@ -24,7 +24,7 @@ const Slider = () => {
             </div>
         </div>
         <div className='relative'>
-            <img src={img2} className={'h-[395px] object-contain object-right' }/>
+            <img src={img2} className={'h-[395px] object-contain object-right' } alt=""/>
             <div className={`absolute w-full h-full ${styles.overlay} flex items-center `}>
             <div className="card w-96 glass ml-16">
   <div className="card-body text-black">
@@ -38,7 +38,7 @@ const Slider = () => {
             </div>
         </div>
         <div className='relative'>
-            <img src={img} className={'h-[395px] object-contain object-right' }/>
+            <img src={img} className={'h-[395px] object-contain object-right' } alt=""/>
             <div className={`absolute w-full h-full ${styles.overlay} flex items-center `}>
             <div className="card w-96 glass ml-16">
   <div className="card-body text-black">
