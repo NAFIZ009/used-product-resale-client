@@ -24,23 +24,38 @@ const Signup = () => {
         const name=form.name.value;
         const email=form.email.value;
         const password=form.password.value;
+        const role=form.role.value;
         register(email,password)
         .then(data=>{
             setName(name)
             .then(()=>{
-                Toastify({
-                    text: "SuccessFully Signup",
-                    duration: 3000,
-                    close: true,
-                    gravity: "top",
-                    position: "center",
-                    stopOnFocus: true, // Prevents dismissing of toast on hover
-                    style: {
-                      background: "linear-gradient(to right, #00b09b, #96c93d)",
+                fetch('http://localhost:5000/user',{
+                    method: 'POST',
+                    headers:{
+                        "content-type": "application/json",
                     },
-                  }).showToast();
-                  form.reset();
-                  navigate('/');
+                    body: JSON.stringify({
+                        name,
+                        email,
+                        role
+                    })
+                })
+                .then(res=>{
+                    Toastify({
+                        text: "SuccessFully Signup",
+                        duration: 3000,
+                        close: true,
+                        gravity: "top",
+                        position: "center",
+                        stopOnFocus: true, // Prevents dismissing of toast on hover
+                        style: {
+                          background: "linear-gradient(to right, #00b09b, #96c93d)",
+                        },
+                      }).showToast();
+                      form.reset();
+                      navigate('/');
+                })
+                
             })
         })
         .catch(err=>Toastify({
@@ -112,11 +127,11 @@ const Signup = () => {
             <div className="card-body">
               <form className='mx-auto flex flex-col gap-10 my-6' onSubmit={signUpHandler}>
                 <div className='relative'>
-                    <input type="text" name='name' id='name' className={`bg-none pb-1 text-white `} onChange={onChange1}/>
+                    <input type="text" required name='name' id='name' className={`bg-none pb-1 text-white `} onChange={onChange1}/>
                     <label htmlFor="name" className={`${value1&&styles.onValue}`}>Name</label>
                 </div>
                 <div className='relative'>
-                    <input type="email" name='email' id='email' className={`bg-none pb-1 text-white`} onChange={onChange2}/>
+                    <input type="email" required name='email' id='email' className={`bg-none pb-1 text-white`} onChange={onChange2}/>
                     <label htmlFor="email" className={`${value2&&styles.onValue}`}>Email</label>
                 </div>
                 {
@@ -126,9 +141,16 @@ const Signup = () => {
                 // </div>
             }
                 <div className='relative'>
-                    <input type="password" name='password' id='password' className={`bg-none pb-1 text-white`} onChange={onChange3}/>
+                    <input type="password" required name='password' id='password' className={`bg-none pb-1 text-white`} onChange={onChange3}/>
                     <label htmlFor="password" className={`${value3&&styles.onValue}`}>Password</label>
                 </div>
+                <div className="relative">
+                <p className='my-2 text-white text-sm'>What You Want To Be?</p>
+                <select name='role' required className="select w-full max-w-xs">
+                    <option value="buyer">Buyers</option>
+                    <option value='seller'>Seller</option>
+                </select>
+            </div>
                 <button type='submit' className='btn'>Sign Up</button>
               </form>
               

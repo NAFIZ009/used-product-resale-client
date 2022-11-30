@@ -35,7 +35,8 @@ const Navbar = () => {
   <div className="navbar-end">
     <div className={`flex gap-4 items-center ${styles.hiddenOnMobile}`}>
     {user&&user.uid?<>
-      <Link className='hover:text-violet-500 bg-none' onClick={logOut}>Log Out</Link>
+      <div className='text-sm font-bold'>{user.displayName}</div>
+      <Link className='hover:text-violet-500 bg-none ' onClick={logOut}>Log Out</Link>
       </>
     :
     <><Link to='/login' className='hover:text-violet-500 bg-none'>Log In</Link>
@@ -53,6 +54,7 @@ const Navbar = () => {
       <li className={`font-bold  ${styles.hoverNav}`}><NavLink className={`bg-inherit`}>Blogs</NavLink></li>
       <li className='my-3 gap-1'>
       {user&&user.uid?<>
+        <div className='text-sm font-bold'>{user.displayName}</div>
         <Link className='hover:text-violet-500 bg-none' onClick={logOut}>Log Out</Link>
         </>
       :

@@ -4,6 +4,7 @@ import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import Shop from "../Pages/Shop/Shop";
 import Signup from "../Pages/SignUP/Signup";
+import PrivetRoute from "./Privetroute";
 
 const router=createBrowserRouter([
     {
@@ -24,7 +25,7 @@ const router=createBrowserRouter([
             },
             {
                 path:'/shop',
-                element:<Shop></Shop>,
+                element:<PrivetRoute><Shop></Shop></PrivetRoute>,
             },
         ]
     },
